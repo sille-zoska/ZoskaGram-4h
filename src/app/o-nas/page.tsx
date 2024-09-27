@@ -1,15 +1,15 @@
-// src/app/o-mne/page.tsx
+// src/app/o-nas/page.tsx
 
 
 import Typography from "@mui/material/Typography";
 
-export const metadata = { title: "O mne | ZoškaSnap" };
+export const metadata = { title: "O nás | ZoškaSnap" };
 
-export default function AboutMe() {
+export default function AboutUs() {
 
   return (
 
-      <Typography> O mne </Typography>
+      <Typography> O nás </Typography>
 
   );
 }
