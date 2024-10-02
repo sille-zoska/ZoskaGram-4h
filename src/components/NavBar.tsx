@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const handleNavigation = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
-    router.push(newValue); // Navigate to the selected route
+    router.push(newValue); 
   };
 
   return (
