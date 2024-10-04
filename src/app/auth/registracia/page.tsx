@@ -2,13 +2,13 @@
 
 import Typography from "@mui/material/Typography";
 
-export const metadata = { title: "Registracia uzivatela | ZoškaSnap" };
+export const metadata = { title: "Registrácia užívateľa | ZoškaSnap" };
 
 export default function SignUp() {
 
   return (
 
-      <Typography> Registracia uzivatela </Typography>
+      <Typography> Registrácia užívateľa </Typography>
 
   );
 }

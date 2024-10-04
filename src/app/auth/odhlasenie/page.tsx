@@ -2,13 +2,13 @@
 
 import Typography from "@mui/material/Typography";
 
-export const metadata = { title: "Odhlasenie uzivatela | ZoškaSnap" };
+export const metadata = { title: "Odhlásenie užívateľa | ZoškaSnap" };
 
 export default function SignOut() {
 
   return (
 
-      <Typography> Odhlasenie uzivatela </Typography>
+      <Typography> Odhlásenie užívateľa </Typography>
 
   );
 }

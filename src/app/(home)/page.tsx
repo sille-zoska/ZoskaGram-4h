@@ -2,14 +2,16 @@
 
 
 import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 
 export const metadata = { title: "Domov | ZoškaSnap" };
 
 export default function Home() {
 
   return (
-
+    <Container> 
       <Typography> Domovská stránka </Typography>
+    </Container>
 
   );
 }
@@ -30,7 +32,7 @@ export default function Home() {
 
 
 
-
+{/* 
 
 
 // import HomeIcon from "@mui/icons-material/Home";
@@ -63,4 +65,4 @@ export default function Home() {
     //     <BottomNavigationAction label="Notifikácie" icon={<NotificationsIcon />} />
     //     <BottomNavigationAction label="Profil" icon={<AccountCircleIcon />} />
     //   </BottomNavigation>
-    // </Container>
+    // </Container> */}
