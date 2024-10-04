@@ -13,25 +13,3 @@ VsCode Source control -> Initial -> Commit -> Publish branch (Sync)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ssh config
-git init
-git branch -m main
-git config user.name "sille-zoska"
-git config user.email "sille@zochova.sk"
-git remote add origin git@github.com:sille-zoska/snap-zoska-4h.git
-git remote -v
