@@ -23,4 +23,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-s
