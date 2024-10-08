@@ -11,7 +11,7 @@ export default function LogoutPage() {
       <Typography variant="h4">Odhlásenie</Typography>
       <Button
         variant="contained"
-        onClick={() => signOut({ callbackUrl: '/' })} // Directly redirect to home after sign out
+        onClick={() => signOut()} 
       >
         Odhlásiť sa
       </Button>
