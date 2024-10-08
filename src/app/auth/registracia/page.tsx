@@ -1,12 +1,10 @@
 // src/app/auth/registracia/page.tsx
 
 import {
-  Box,
   Button,
   Checkbox,
   Container,
   FormControlLabel,
-  Grid,
   TextField,
   Typography,
   Divider,
