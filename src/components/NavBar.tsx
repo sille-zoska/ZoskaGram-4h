@@ -4,15 +4,15 @@
 "use client";
 
 import * as React from 'react';
-import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction, Box, Avatar } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SearchIcon from '@mui/icons-material/Search';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import LoginIcon from '@mui/icons-material/Login';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useRouter } from 'next/navigation';
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar() {
   const [value, setValue] = React.useState('/');
@@ -24,34 +24,55 @@ export default function Navbar() {
     router.push(newValue);
   };
 
+  // Non-authenticated navigation paths
+  const nonAuthPaths = [
+    { label: "Domov", value: "/", icon: <HomeIcon /> },
+    { label: "Prispevky", value: "/prispevok", icon: <AddCircleIcon /> },
+    { label: "Registrácia", value: "/auth/registracia", icon: <AppRegistrationIcon /> },
+    { label: "Prihlásenie", value: "/auth/prihlasenie", icon: <LoginIcon /> }
+  ];
+
+  // Authenticated navigation paths
+  const authPaths = [
+    { label: "Domov", value: "/", icon: <HomeIcon /> },
+    { label: "Hľadať", value: "/search", icon: <SearchIcon /> },
+    { label: "Pridať", value: "/add", icon: <AddCircleIcon /> },
+    {
+      label: "Profil",
+      value: "/profil",
+      icon: session?.user?.image ? (
+        <Avatar 
+          alt={session?.user?.name || "User"} 
+          src={session?.user?.image || undefined} 
+        />
+      ) : (
+        <Avatar>{session?.user?.name?.charAt(0) || "U"}</Avatar>
+      )
+    },
+    { label: "Odhlásiť", value: "/auth/odhlasenie", icon: <LogoutIcon /> },
+  ];
+
+  // Decide which paths to use based on authentication status
+  const navigationPaths = status === "authenticated" ? authPaths : nonAuthPaths;
+
   return (
-    <Box sx={{ width: '100%', position: 'fixed', bottom: 0 }}> {/* Fixes the NavBar */}
+    <Box sx={{ width: '100%', position: 'fixed', bottom: 0 }}>
       <BottomNavigation
         showLabels
         value={value}
         onChange={handleNavigation}
       >
-        <BottomNavigationAction label="Domov" value="/" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Profily" value="/profil" icon={<AccountCircleIcon />} />
-        <BottomNavigationAction label="Príspevky" value="/prispevok" icon={<AddCircleIcon />} />
-
-        {status === "authenticated" ? (
+        {navigationPaths.map((path) => (
           <BottomNavigationAction
-            label={`Odhlásiť (${session?.user?.name})`}  // Display the user's name
-            value="/auth/odhlasenie"
-            icon={<LogoutIcon />}
+            key={path.value}
+            label={path.label}
+            value={path.value}
+            icon={path.icon}
           />
-        ) : (
-          [
-            <BottomNavigationAction key="login" label="Prihlásenie" value="/auth/prihlasenie" icon={<LoginIcon />} />,
-            <BottomNavigationAction key="register" label="Registrácia" value="/auth/registracia" icon={<AppRegistrationIcon />} />
-          ]
-        )}
+        ))}
       </BottomNavigation>
     </Box>
   );
 }
-
-
 
 
