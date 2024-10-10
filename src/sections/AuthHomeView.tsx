@@ -1,8 +1,9 @@
 // src/sections/AuthHomeView.tsx
 
 import { Container, Typography, Box } from "@mui/material";
+import { Session } from "next-auth";
 
-export default function AuthHomeView({ session }: { session: any }) {
+export default function AuthHomeView({ session }: { session: Session }) {
 
   return (
     <Container>
