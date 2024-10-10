@@ -1,17 +1,9 @@
 // src/app/auth/prihlasenie/page.tsx
 
-"use client";
+import SignInView from "@/sections/SignInView";
 
-import { signIn } from "next-auth/react";
-import { Button, Typography } from "@mui/material";
+export const metadata = { title: "Prihlásenie užívateľa | ZoškaSnap" };
 
-export default function LoginPage() {
-  return (
-    <div>
-      <Typography variant="h4">Prihlásenie</Typography>
-      <Button variant="contained" onClick={() => signIn("google")}>
-        Prihlásiť sa pomocou Google
-      </Button>
-    </div>
-  );
+export default function SignInPage() {
+  return <SignInView />;
 }
