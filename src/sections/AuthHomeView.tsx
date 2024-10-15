@@ -13,9 +13,9 @@ export default function AuthHomeView({ session }: { session: Session }) {
       </Typography>
 
 
-      <Box sx={{ mt: 2 }}>
-        <pre>{JSON.stringify(session, null, 2)}</pre> {/* Formats and displays the session data */}
-      </Box>
+      {/* <Box sx={{ mt: 2 }}>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
+      </Box> */}
     </Container>
   );
 }
