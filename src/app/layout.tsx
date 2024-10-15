@@ -24,7 +24,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
-          <Navbar /> {/* Moved Navbar outside of the main container */}
+          <Navbar /> 
         </AuthProvider>
       </body>
     </html>
