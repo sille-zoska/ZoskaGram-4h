@@ -7,6 +7,8 @@ export default function NonAuthHomeView() {
     <Container>
       <Typography variant="body1" sx={{ mt: 2 }}>
         Domovská stránka - NEprihlásený user
+      </Typography>
+      <Typography>
         Registrujte sa, aby ste mohli pridať príspevky a zobraziť profil.
       </Typography>
     </Container>
