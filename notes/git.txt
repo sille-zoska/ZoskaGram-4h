@@ -1,4 +1,6 @@
 
+git clone https://github.com/sille-zoska/snap-zoska.git
+cd snap-zoska
 git init
 git branch -m main
 git config user.name "sille-zoska"
