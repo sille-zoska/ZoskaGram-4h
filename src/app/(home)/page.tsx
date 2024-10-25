@@ -1,4 +1,6 @@
 // src/app/page.tsx
+
+
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";
 import AuthHomeView from "@/sections/AuthHomeView";

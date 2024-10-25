@@ -13,7 +13,7 @@
 3. VsCode:
     In .env replace value of DATABASE_URL
     .env
-    DATABASE_URL="postgresql://username:password@hostname:port/ ... /verceldb?sslmode=require"
+    POSTGRES_URL="postgresql://username:password@hostname:port/ ... /verceldb?sslmode=require"
     Create prisma.ts in src/app/api/auth/[...nextauth] -> copy code from NextAuth docs
     Update authOptions.ts -> add:   import { PrismaAdapter } from "@auth/prisma-adapter"
                                     import { prisma } from "./prisma"
@@ -27,4 +27,5 @@
     npx prisma migrate dev --name init
     npx prisma generate
     npx prisma studio
+
 
